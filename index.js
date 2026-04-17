@@ -14,10 +14,13 @@ function displayPortfolio(myArray) {
     const { name, ticker, price, purchasePrice } = asset
     const profitLoss = price - purchasePrice
     const status = profitLoss >= 0 ? "📈 PROFIT" : "📉 LOSS";
+    console.log(`[${time}] ${name} (${ticker})
+        Current Price: ${price}\nStatus: ${status}
+        ---------------------------------------------`)
     
   });
 }
 
-// displayPortfolio(assets)
+
 
 
