@@ -5,7 +5,7 @@ console.log("--- Sentinel Portfolio Tracker Initialized ---");
 function displayPortfolio(myArray) {
   myArray.forEach((asset) => {
     //Date() constsructor for current time stamp
-    time = new Date().toLocaleTimeString();
+    const time = new Date().toLocaleTimeString();
     // const name = asset.name
     // const ticker = asset.ticker
     // const price = asset.price
