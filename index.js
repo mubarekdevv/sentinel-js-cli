@@ -19,10 +19,24 @@ function displayPortfolio(myArray) {
   });
 }
 //to run our display funciton in an interval of every 3 seconds
-setInterval(function(){
-    displayPortfolio(assets)
-}, 3000)
+// setInterval(function(){
+//     displayPortfolio(assets)
+// }, 3000)
 //the ff is to run it once immediately withoutwaiting 3 seconds
-displayPortfolio(assets)
+// displayPortfolio(assets)
 
+console.clear();
+console.log("📡 Connecting to secure Sentinel Server...");
+
+setTimeout(function(){
+    console.log("✅ Connection Established. Fetching portfolio...");
+
+    setTimeout(function(){
+        displayPortfolio(assets)
+
+        setInterval(function(){
+            displayPortfolio(assets)
+        },5000)
+    }, 1500)
+},2000)
 
