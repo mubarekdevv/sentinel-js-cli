@@ -12,7 +12,8 @@ function displayPortfolio(myArray) {
     // const purchasePrice = asset.purchasePrice
     // But b/c asset is an object so I can destructure it but assets is a list
     const { name, ticker, price, purchasePrice } = asset
-    
+    const profitLoss = price - purchasePrice
+    const status = profitLoss >= 0 ? "📈 PROFIT" : "📉 LOSS";
     
   });
 }
