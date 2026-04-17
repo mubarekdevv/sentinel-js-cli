@@ -18,7 +18,11 @@ function displayPortfolio(myArray) {
     
   });
 }
-
+//to run our display funciton in an interval of every 3 seconds
+setInterval(function(){
+    displayPortfolio(assets)
+}, 3000)
+//the ff is to run it once immediately withoutwaiting 3 seconds
 displayPortfolio(assets)
 
 
