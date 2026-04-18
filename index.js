@@ -47,5 +47,9 @@ setTimeout(function(){
 
   setTimeout(function(){
     displayPortfolio(assets)
+
+    setTimeout(function(){
+      displayPortfolio(assets)
+    })
   })
-})
+},2000)
