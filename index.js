@@ -25,18 +25,6 @@ function displayPortfolio(myArray) {
 //the ff is to run it once immediately withoutwaiting 3 seconds
 // displayPortfolio(assets)
 
+
+
 console.clear();
-console.log("📡 Connecting to secure Sentinel Server...");
-
-setTimeout(function(){
-    console.log("✅ Connection Established. Fetching portfolio...");
-
-    setTimeout(function(){
-        displayPortfolio(assets)
-
-        setInterval(function(){
-            displayPortfolio(assets)
-        },5000)
-    }, 1500)
-},2000)
-
