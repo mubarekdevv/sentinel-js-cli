@@ -26,5 +26,5 @@ function displayPortfolio(myArray) {
 // displayPortfolio(assets)
 
 
-
 console.clear();
+console.log("📡 Connecting to secure Sentinel Server...");
