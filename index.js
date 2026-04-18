@@ -26,17 +26,30 @@ function displayPortfolio(myArray) {
 // displayPortfolio(assets)
 
 console.clear();
-console.log("📡 Connecting to secure Sentinel Server...");
+// console.log("📡 Connecting to secure Sentinel Server...");
 
-setTimeout(function(){
-    console.log("✅ Connection Established. Fetching portfolio...");
+// setTimeout(function(){
+//     console.log("✅ Connection Established. Fetching portfolio...");
 
-    setTimeout(function(){
-        displayPortfolio(assets)
+//     setTimeout(function(){
+//         displayPortfolio(assets)
 
-        setInterval(function(){
-            displayPortfolio(assets)
-        },5000)
-    }, 1500)
-},2000)
+//         setInterval(function(){
+//             displayPortfolio(assets)
+//         },5000)
+//     }, 1500)
+// },2000)
+console.log("📡 Attempting to connect to server...");
+const startDashboard = setTimeout(()=> {
+  console.log("✅ Data Loaded!");
+}, 3000)
+
+const connectionStable = false
+
+if (!connectionStable) {
+  console.log("⚠️ Connection unstable! Aborting launch...");
+  clearTimeout(startDashboard)
+
+  console.log("🛑 Dashboard start cancelled.");
+}
 
