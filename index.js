@@ -28,10 +28,24 @@ function displayPortfolio(myArray) {
 // console.clear();
 // console.log("📡 Connecting to secure Sentinel Server...");
 
+// setTimeout(function(){
+//     console.log("✅ Connection Established. Fetching portfolio...");
 
+//     setTimeout(function(){
+//         displayPortfolio(assets)
+
+//         setInterval(function(){
+//             displayPortfolio(assets)
+//         },5000)
+//     }, 1500)
+// },2000)
 
 console.clear();
 console.log("📡 Connecting to secure Sentinel Server...");
 setTimeout(function(){
   console.log("✅ Connection Established. Fetching portfolio...");
+
+  setTimeout(function(){
+    displayPortfolio(assets)
+  })
 })
