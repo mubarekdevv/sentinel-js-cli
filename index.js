@@ -67,3 +67,7 @@ try {
   console.log(error.message);
   console.log("Please fix data.js file to continue");
 }
+
+function displayByMode(data, mode) {
+  console.clear();
+}
