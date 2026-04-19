@@ -63,4 +63,6 @@ function validateData(data) {
 try {
   validateData(assets);
   console.log("Starting Sentinel...");
+} catch (error) {
+  console.log(error.message);
 }
