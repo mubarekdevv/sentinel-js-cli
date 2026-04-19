@@ -70,4 +70,5 @@ try {
 
 function displayByMode(data, mode) {
   console.clear();
+  console.log(`--- Sentinel Dashboard [Mode: ${mode}] ---`);console.log(`--- Sentinel Dashboard [Mode: ${mode}] ---`);
 }
