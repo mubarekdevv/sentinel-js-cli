@@ -59,3 +59,8 @@ function validateData(data) {
   }
   console.log("Data integrity check passed");
 }
+
+try {
+  validateData(assets);
+  console.log("Starting Sentinel...");
+}
