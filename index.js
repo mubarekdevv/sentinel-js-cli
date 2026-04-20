@@ -95,9 +95,11 @@ function displayByMode(data, mode) {
         break;
 
       default:
-        break;
+        console.log("⚠️ Unknown view mode selected.");
     }
 
     
-  })
+  });
 }
+
+displayByMode(assets, viewMode)
