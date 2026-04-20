@@ -80,6 +80,10 @@ function displayByMode(data, mode) {
         console.log(`${ticker}: $${price.toLocaleString()}`);
         break;
 
+      case "SUMMARY":
+        console.log(`${name} is currently at $${price.toLocaleString()}`);
+        break;
+
       default:
         break;
     }
