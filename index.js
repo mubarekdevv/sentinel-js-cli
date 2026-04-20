@@ -84,6 +84,16 @@ function displayByMode(data, mode) {
         console.log(`${name} is currently at $${price.toLocaleString()}`);
         break;
 
+      case "DETAILED":
+        const {purchasePrice} = asset;
+        const profit = price - purchasePrice
+        console.log(`
+                Asset: ${name} (${ticker})
+                Price: $${price}
+                Profit/Loss: $${profit}
+                --------------------------`);
+        
+
       default:
         break;
     }
