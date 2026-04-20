@@ -74,5 +74,16 @@ function displayByMode(data, mode) {
 
   data.forEach(asset => {
     const { name, ticker, price } = asset;
+
+    switch (mode) {
+      case "TICKER":
+        console.log(`${ticker}: $${price.toLocaleString()}`);
+        break;
+
+      default:
+        break;
+    }
+
+    
   })
 }
