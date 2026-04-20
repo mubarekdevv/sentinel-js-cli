@@ -68,11 +68,15 @@ try {
   console.log("Please fix data.js file to continue");
 }
 
+let userPreference;
+const finalMode = userPreference ?? "SUMMARY";
+
 function displayByMode(data, mode) {
   console.clear();
-  console.log(`--- Sentinel Dashboard [Mode: ${mode}] ---`);console.log(`--- Sentinel Dashboard [Mode: ${mode}] ---`);
+  console.log(`--- Sentinel Dashboard [Mode: ${mode}] ---`);
 
   data.forEach(asset => {
+    const displayName = asset.name || "Unknown Asset";
     const { name, ticker, price } = asset;
 
     switch (mode) {
