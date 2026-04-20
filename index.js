@@ -92,7 +92,7 @@ function displayByMode(data, mode) {
                 Price: $${price}
                 Profit/Loss: $${profit}
                 --------------------------`);
-        
+        break;
 
       default:
         break;
