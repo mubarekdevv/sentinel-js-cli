@@ -11,10 +11,5 @@ export const assets = [
         price: 3_200,
         purchasePrice: 3_500
     },
-    {
-        name: "Solana",
-        ticker: "SOL",
-        price: 145,
-        purchasePrice: 120,
-    }
+    
 ];
