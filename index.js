@@ -99,8 +99,7 @@ function displayByMode(data, mode) {
         break;
 
       default:
-        // console.log("⚠️ Unknown view mode selected.");
-        console.log("⚠️ Mode not supported.");
+        
     }
 
     
