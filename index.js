@@ -92,8 +92,7 @@ function displayByMode(data, mode) {
         const {purchasePrice} = asset;
         const profit = price - purchasePrice
         console.log(`
-                Asset: ${name} (${ticker})
-                Price: $${price}
+                
                 Profit/Loss: $${profit}
                 --------------------------`);
         break;
