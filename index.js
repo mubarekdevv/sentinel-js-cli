@@ -50,7 +50,6 @@ if (!connectionStable) {
   console.log("⚠️ Connection unstable! Aborting launch...");
   clearTimeout(startDashboard)
 
-  console.log("🛑 Dashboard start cancelled.");
 }
 
 function validateData(data) {
