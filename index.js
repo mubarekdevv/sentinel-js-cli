@@ -54,7 +54,9 @@ if (!connectionStable) {
 }
 
 function validateData(data) {
-  
+  if (!data || data.length === 0) {
+    throw new Error("Critical Failure: No asset data found in data.js");
+  }
   console.log("Data integrity check passed");
 }
 
