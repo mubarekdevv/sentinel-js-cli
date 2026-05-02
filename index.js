@@ -111,6 +111,7 @@ function displayByMode(data, mode) {
 
 function summarizePortfolio(data) {
   let totalValue = 0;
+  let bestAssset = data[0]; // Start by assuming the first one is best
 }
 
 displayByMode(assets, finalMode);
