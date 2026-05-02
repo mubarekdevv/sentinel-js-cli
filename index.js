@@ -124,6 +124,13 @@ function summarizePortfolio(data) {
 
   //Destructuring the best asset
   const {name, price} = bestAssset;
+
+  console.log(`
+    === 📊 QUICK STATS ===
+    Total Portfolio Value: $${totalValue.toLocaleString()}
+    Highest Value Asset: ${name} ($${price.toLocaleString()})
+    =======================
+    `);
 }
 
 displayByMode(assets, finalMode);
