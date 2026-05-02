@@ -114,7 +114,12 @@ function summarizePortfolio(data) {
   let bestAssset = data[0]; // Start by assuming the first one is best
 
   data.forEach(asset => {
-    totalValue+= asset.price
+    totalValue += asset.price;
+
+    //Logic to find the highest priced asset
+    if (asset.price > bestAssset.price) {
+      bestAssset = asset;
+    }
   })
 }
 
