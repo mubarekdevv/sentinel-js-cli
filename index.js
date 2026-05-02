@@ -109,4 +109,8 @@ function displayByMode(data, mode) {
   });
 }
 
+function summarizePortfolio(data) {
+  
+}
+
 displayByMode(assets, finalMode);
