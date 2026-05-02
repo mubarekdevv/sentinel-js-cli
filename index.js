@@ -134,5 +134,5 @@ function summarizePortfolio(data) {
 }
 
 //call it before my main display logic
-
+summarizePortfolio(assets)
 displayByMode(assets, finalMode);
