@@ -110,7 +110,7 @@ function displayByMode(data, mode) {
 }
 
 function summarizePortfolio(data) {
-  
+  let totalValue = 0;
 }
 
 displayByMode(assets, finalMode);
