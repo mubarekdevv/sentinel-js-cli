@@ -18,6 +18,7 @@ function displayPortfolio(myArray) {
     
   });
 }
+//setInterval it takes two parameters andu yehone callback function nw ena it returns what should be done in a given interval which is our second parameter
 //to run our display funciton in an interval of every 3 seconds
 // setInterval(function(){
 //     displayPortfolio(assets)
@@ -80,6 +81,7 @@ function displayByMode(data, mode) {
     const { name, ticker, price } = asset;
 
     switch (mode) {
+      //i.e mode === "TICKER", strict comparison
       case "TICKER":
         console.log(`${ticker}: $${price.toLocaleString()}`);
         break;
@@ -89,8 +91,8 @@ function displayByMode(data, mode) {
         break;
 
       case "DETAILED":
-        const {purchasePrice} = asset;
-        const profit = price - purchasePrice
+        const { purchasePrice } = asset;
+        const profit = price - purchasePrice;
         console.log(`
                 Asset: ${name} (${ticker})
                 Price: $${price}
@@ -107,4 +109,4 @@ function displayByMode(data, mode) {
   });
 }
 
-displayByMode(assets, viewMode)
+displayByMode(assets, finalMode);
