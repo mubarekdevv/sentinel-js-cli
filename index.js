@@ -121,6 +121,9 @@ function summarizePortfolio(data) {
       bestAssset = asset;
     }
   })
+
+  //Destructuring the best asset
+  const {name, price} = bestAssset;
 }
 
 displayByMode(assets, finalMode);
