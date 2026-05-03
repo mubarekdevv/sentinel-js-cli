@@ -265,3 +265,4 @@ try {
     console.log("❌ ERROR:", error.message);
     console.log("💡 Please fix your data.js file to continue.");
 }
+
