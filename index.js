@@ -282,5 +282,5 @@ const questionTimer = setTimeout(logAnswer, 3000, "Lima", 10);
 
 document.getElementById("stopii").addEventListener('dblclick', function(){
     clearTimeout(questionTimer)
-    
+    console.log("Cancelling...");
 })
