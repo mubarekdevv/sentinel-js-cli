@@ -279,3 +279,7 @@ Challenge:
        The answer is 'Lima' and it's 10 points for getting it right. 
 */
 const questionTimer = setTimeout(logAnswer, 3000, "Lima", 10);
+
+document.getElementById("stopii").addEventListener('dblclick', function(){
+    clearTimeout(questionTimer)
+})
