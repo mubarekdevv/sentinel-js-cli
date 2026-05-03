@@ -278,3 +278,4 @@ Challenge:
     2. Make sure 'logAnswer' has all the info it needs. 
        The answer is 'Lima' and it's 10 points for getting it right. 
 */
+const questionTimer = setTimeout(logAnswer, 3000, "Lima", 10);
