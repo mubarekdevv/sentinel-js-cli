@@ -15,7 +15,7 @@
 //     const profitLoss = price - purchasePrice
 //     const status = profitLoss >= 0 ? "📈 PROFIT" : "📉 LOSS";
 //     console.log(`[${time}] ${name} (${ticker})\nCurrent Price: $${price.toLocaleString()}\nStatus: ${status} ($${profitLoss.toLocaleString()})\n------------------------------------`)
-    
+
 //   });
 // }
 // //setInterval it takes two parameters andu yehone callback function nw ena it returns what should be done in a given interval which is our second parameter
@@ -105,7 +105,6 @@
 //         console.log("⚠️ Mode not supported.");
 //     }
 
-    
 //   });
 // }
 
@@ -146,11 +145,11 @@ import { assets } from "./data.js";
  * Uses 'throw' to trigger an emergency stop if data is bad.
  */
 function validateData(data) {
-    if (!data || data.length === 0) {
-        // 'new Error' creates the object, 'throw' sends it to the catch block
-        throw new Error("Critical Failure: No asset data found in data.js");
-    }
-    console.log("✅ Data integrity check passed.");
+  if (!data || data.length === 0) {
+    // 'new Error' creates the object, 'throw' sends it to the catch block
+    throw new Error("Critical Failure: No asset data found in data.js");
+  }
+  console.log("✅ Data integrity check passed.");
 }
 
 // --- 3. ANALYTICS FUNCTION ---
@@ -159,21 +158,21 @@ function validateData(data) {
  * Demonstrates the 'Accumulator' pattern and Object Destructuring.
  */
 function summarizePortfolio(data) {
-    let totalValue = 0;
-    let bestAsset = data[0]; // Start by assuming the first index is the best
+  let totalValue = 0;
+  let bestAsset = data[0]; // Start by assuming the first index is the best
 
-    data.forEach(asset => {
-        totalValue += asset.price; // Adding up all prices
+  data.forEach((asset) => {
+    totalValue += asset.price; // Adding up all prices
 
-        // Compare current asset price to our current 'best'
-        if (asset.price > bestAsset.price) {
-            bestAsset = asset;
-        }
-    });
+    // Compare current asset price to our current 'best'
+    if (asset.price > bestAsset.price) {
+      bestAsset = asset;
+    }
+  });
 
-    const { name, price } = bestAsset; // Pull out names for the final log
+  const { name, price } = bestAsset; // Pull out names for the final log
 
-    console.log(`
+  console.log(`
     === 📊 QUICK STATS ===
     Total Portfolio Value: $${totalValue.toLocaleString()}
     Highest Value Asset: ${name} ($${price.toLocaleString()})
@@ -187,37 +186,39 @@ function summarizePortfolio(data) {
  * Demonstrates: Default parameters (??), Logic OR (||), and Switch statements.
  */
 function displayByMode(data, mode) {
-    console.log(`--- Sentinel Dashboard [Mode: ${mode}] ---`);
+  console.log(`--- Sentinel Dashboard [Mode: ${mode}] ---`);
 
-    data.forEach(asset => {
-        // Fallback: if name is missing, use "Unknown Asset"
-        const displayName = asset.name || "Unknown Asset"; 
-        const { ticker, price, purchasePrice } = asset;
-        const time = new Date().toLocaleTimeString();
+  data.forEach((asset) => {
+    // Fallback: if name is missing, use "Unknown Asset"
+    const displayName = asset.name || "Unknown Asset";
+    const { ticker, price, purchasePrice } = asset;
+    const time = new Date().toLocaleTimeString();
 
-        switch (mode) {
-            case "TICKER":
-                console.log(`[${time}] ${ticker}: $${price.toLocaleString()}`);
-                break;
+    switch (mode) {
+      case "TICKER":
+        console.log(`[${time}] ${ticker}: $${price.toLocaleString()}`);
+        break;
 
-            case "SUMMARY":
-                console.log(`${displayName} is currently at $${price.toLocaleString()}`);
-                break;
+      case "SUMMARY":
+        console.log(
+          `${displayName} is currently at $${price.toLocaleString()}`,
+        );
+        break;
 
-            case "DETAILED":
-                const profit = price - purchasePrice;
-                const status = profit >= 0 ? "📈 PROFIT" : "📉 LOSS";
-                console.log(`
+      case "DETAILED":
+        const profit = price - purchasePrice;
+        const status = profit >= 0 ? "📈 PROFIT" : "📉 LOSS";
+        console.log(`
                 Asset: ${displayName} (${ticker})
                 Price: $${price.toLocaleString()}
                 Status: ${status} ($${profit.toLocaleString()})
                 --------------------------`);
-                break;
+        break;
 
-            default:
-                console.log("⚠️ Mode not supported.");
-        }
-    });
+      default:
+        console.log("⚠️ Mode not supported.");
+    }
+  });
 }
 
 // --- 5. MAIN EXECUTION (THE STARTING LINE) ---
@@ -226,43 +227,46 @@ console.clear();
 console.log("--- Sentinel Portfolio Tracker Initialized ---");
 
 try {
-    // Phase 1: Validate the imported data
-    validateData(assets);
-    
-    // Phase 2: Setup Preferences
-    let userPreference; 
-    const finalMode = userPreference ?? "DETAILED"; // Use ?? to set a default if undefined
+  // Phase 1: Validate the imported data
+  validateData(assets);
 
-    // Phase 3: Simulate Server Connection (Asynchronous Simulation)
-    console.log("📡 Attempting to connect to server...");
-    
-    const connectionStable = true; // Set to false to test the 'clearTimeout'
+  // Phase 2: Setup Preferences
+  let userPreference;
+  const finalMode = userPreference ?? "DETAILED"; // Use ?? to set a default if undefined
 
-    const startDashboard = setTimeout(() => {
-        console.clear();
-        console.log("✅ Connection Established!");
-        
-        // Show Stats first
-        summarizePortfolio(assets);
+  // Phase 3: Simulate Server Connection (Asynchronous Simulation)
+  console.log("📡 Attempting to connect to server...");
 
-        // Then start the live interval
-        setInterval(() => {
-            console.clear();
-            summarizePortfolio(assets);
-            displayByMode(assets, finalMode);
-        }, 5000);
+  const connectionStable = true; // Set to false to test the 'clearTimeout'
 
-    }, 2000);
+  const startDashboard = setTimeout(() => {
+    console.clear();
+    console.log("✅ Connection Established!");
 
-    // Emergency Stop Logic
-    if (!connectionStable) {
-        clearTimeout(startDashboard);
-        console.log("🛑 Connection unstable! Dashboard launch aborted.");
-    }
+    // Show Stats first
+    summarizePortfolio(assets);
 
+    // Then start the live interval
+    setInterval(() => {
+      console.clear();
+      summarizePortfolio(assets);
+      displayByMode(assets, finalMode);
+    }, 5000);
+  }, 2000);
+
+  // Emergency Stop Logic
+  if (!connectionStable) {
+    clearTimeout(startDashboard);
+    console.log("🛑 Connection unstable! Dashboard launch aborted.");
+  }
 } catch (error) {
-    // If anything fails in the 'try', this runs
-    console.log("❌ ERROR:", error.message);
-    console.log("💡 Please fix your data.js file to continue.");
+  // If anything fails in the 'try', this runs
+  console.log("❌ ERROR:", error.message);
+  console.log("💡 Please fix your data.js file to continue.");
 }
 
+function logAnswer(answer, points) {
+  console.log(
+    `The answer is ${answer} of course! If you got that right, giver yourself ${points} points.`,
+  );
+}
